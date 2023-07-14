@@ -1,0 +1,19 @@
+{
+	"functions": [
+		{
+			"source": "./",
+			"codebase": "default",
+			"ignore": [
+				"node_modules",
+				"src",
+				".git",
+				"firebase-debug.log",
+				"firebase-debug.*.log"
+			],
+			"predeploy": [
+				"yarn run lint",
+				"yarn run build"
+			]
+		}
+	]
+}
