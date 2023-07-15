@@ -30,5 +30,9 @@ module.exports = {
 		"no-tabs": 0,
 		"indent": ["error", "tab"],
 		"semi": ["error", "never"],
+		"linebreak-style": ["error", "windows"],
+		"object-curly-spacing": ["error", "always"],
+		"require-jsdoc": 0,
+		"new-cap": 0,
 	},
 }
