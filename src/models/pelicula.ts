@@ -15,9 +15,9 @@ class Pelicula {
 }
 
 export const peliculaConverter = {
-	toFirestore(pedido: Pelicula): DocumentData {
+	toFirestore(pelicula: Pelicula): DocumentData {
 		return {
-			...pedido,
+			...pelicula,
 		}
 	},
 	fromFirestore(

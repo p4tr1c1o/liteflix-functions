@@ -4,10 +4,11 @@ import * as admin from "firebase-admin"
 import express from "express"
 import { errorHandler } from "./middlewares/errorHandler"
 import { peliculaConverter } from "./models/pelicula"
+
+
 // import peliculasRouter from "./routers/peliculas.router"
 
 admin.initializeApp()
-
 
 const app = express()
 app.use(express.json())
@@ -20,9 +21,10 @@ app.use(async (_req, response, next) => {
 			.withConverter(peliculaConverter)
 			.get()
 
-		return response.send(result.docs)
+		const peliculas = result.docs.map((doc) => doc.data())
+
+		return response.send(peliculas)
 	} catch (error) {
-		functions.logger.error(error)
 		return next(error)
 	}
 })
