@@ -1,6 +1,3 @@
-// import * as admin from "firebase-admin"
-// import * as logger from "firebase-functions/logger"
-
 import { peliculaConverter } from "../models/pelicula"
 import { db } from ".."
 

@@ -17,7 +17,7 @@ app.use((_req, res) => {
 	res.sendStatus(404)
 })
 
-app.use((error, _request, response, _next) => {
+app.use((error, _request, response) => {
 	errorHandler(error, response)
 })
 
