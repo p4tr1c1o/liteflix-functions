@@ -1,20 +1,20 @@
-// import { firestore } from "./../index"
 import * as admin from "firebase-admin"
-import * as logger from "firebase-functions/logger"
+// import * as logger from "firebase-functions/logger"
 
 import { peliculaConverter } from "../models/pelicula"
 
-async function getAllPeliculas(request, response, next) {
+async function getAllPeliculas(_request, response, next) {
 	try {
-		await admin.firestore()
+		const result = await admin.firestore()
 			.collection("peliculas")
 			.withConverter(peliculaConverter)
-			.listDocuments()
+			.get()
 
-		return response("result.docs")
+		const peliculas = result.docs.map((doc) => doc.data())
+
+		return response.send(peliculas)
 	} catch (error) {
-		logger.error(error)
-		next(error)
+		return next(error)
 	}
 }
 
