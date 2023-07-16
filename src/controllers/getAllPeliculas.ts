@@ -1,12 +1,12 @@
-import * as admin from "firebase-admin"
+// import * as admin from "firebase-admin"
 // import * as logger from "firebase-functions/logger"
 
 import { peliculaConverter } from "../models/pelicula"
+import { db } from ".."
 
 async function getAllPeliculas(_request, response, next) {
 	try {
-		const result = await admin.firestore()
-			.collection("peliculas")
+		const result = await db.collection("peliculas")
 			.withConverter(peliculaConverter)
 			.get()
 

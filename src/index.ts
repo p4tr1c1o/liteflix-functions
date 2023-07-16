@@ -3,11 +3,10 @@ import * as admin from "firebase-admin"
 
 import express from "express"
 import { errorHandler } from "./middlewares/errorHandler"
-import peliculasRouter from "./routers/peliculas.router"
-// import { peliculaConverter } from "./models/pelicula"
-
+import peliculasRouter from "./routers/products.router"
 
 admin.initializeApp()
+export const db = admin.firestore()
 
 const app = express()
 app.use(express.json())
