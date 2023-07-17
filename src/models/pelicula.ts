@@ -5,7 +5,7 @@ import {
 
 class Pelicula {
 	docId?: string
-	titulo?: string
+	title?: string
 	backdrop_path?: string
 
 	public constructor(init?: Partial<Pelicula>) {

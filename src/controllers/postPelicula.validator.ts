@@ -4,7 +4,7 @@ import * as Yup from "yup"
 
 async function postPeliculaValidator(request, response: Response, next) {
 	const schema = Yup.object({
-		titulo: Yup.string().required(),
+		title: Yup.string().required(),
 		backdrop_path: Yup.string().required(),
 	})
 
